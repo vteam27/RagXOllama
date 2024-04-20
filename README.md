@@ -2,8 +2,7 @@
 Node.js server for a Retrieval-Augmented Generation (RAG) system using ChromaDB and Ollama!
 
 ## Setup
-On separate terminals run:
-1. [Ollama](https://ollama.com/) : To serve open source LLMs locally ```ollama run llama3```
+1. [Ollama](https://ollama.com/) : To serve open source LLMs locally ```ollama serve```
 2. [ChromaDB Backend](https://docs.trychroma.com/deployment): Spin up the ChromaDB core
    ```
    docker pull chromadb/chroma
