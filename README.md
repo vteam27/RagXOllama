@@ -8,7 +8,8 @@ Node.js server for a Retrieval-Augmented Generation (RAG) system using ChromaDB 
    docker pull chromadb/chroma
    docker run -p 8000:8000 chromadb/chroma
    ```
-3. Install dependencies and run!
+3. Add your PDF documents to ```Docs/ ```
+4. Install dependencies and run!
    ```
    cd RagXOllama
    npm install
@@ -18,10 +19,12 @@ Node.js server for a Retrieval-Augmented Generation (RAG) system using ChromaDB 
 ## Example
 ![RAG_example](https://github.com/vteam27/RagXOllama/assets/94956831/11031cff-618f-47ad-b6dd-5f5306450526)
 
-0. Ingestion: Feed relevant information into the chromaDB vector store collection. (eg. A lot of latest news article)
+0. Ingestion: Feed relevant information into the chromaDB vector store collection.
 1. Retrieve: We retrieve relevant (top n) chunks of factual information stored in chromaDB using squared l2 normalized euclidean distance between vectors(in this case).
 2. Augment: We append this context into our prompt.
 3. Generate: We feed this prompt to a ```8B llama3 4-bit quantized``` model served by ollama to generate the desired response.
+
+View the ```logs.txt``` file for the full output of my code.
 
 ## Explaination
 
@@ -36,7 +39,7 @@ Retrieval-Augmented Generation (RAG) allows:
 All contributions are welcome!
 - [x] Setup chromaDB and ollama
 - [x] Build a basic RAG pipeline
-- [ ] Build a data loader to chunk and ingest data into chromaDB (support PDFs)
+- [x] Build a data loader to chunk and ingest data into chromaDB (support PDFs)
 - [ ] Build UI for easy interaction
 - [ ] Implement advanced RAG techniques
 - [ ] Use knowledge graphs (neo4j) ?
