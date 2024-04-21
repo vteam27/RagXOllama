@@ -2,7 +2,11 @@
 Node.js server for a Retrieval-Augmented Generation (RAG) system using ChromaDB and Ollama!
 
 ## Setup
-1. [Ollama](https://ollama.com/) : To serve open source LLMs locally ```ollama serve```
+1. [Ollama](https://ollama.com/) : To serve open source LLMs locally (one time setup)
+```
+ollama serve
+ollama run llama3
+```
 2. [ChromaDB Backend](https://docs.trychroma.com/deployment): Spin up the ChromaDB core
    ```
    docker pull chromadb/chroma
@@ -42,5 +46,6 @@ All contributions are welcome!
 - [x] Build a data loader to chunk and ingest data into chromaDB (support PDFs)
 - [ ] Build UI for easy interaction
 - [ ] Implement advanced RAG techniques
-- [ ] Use knowledge graphs (neo4j) ?
+- [ ] Use knowledge graphs (neo4j)?
+- [ ] Deploy on cloud?
 - [ ] TBD
