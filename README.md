@@ -19,6 +19,10 @@ ollama run llama3
    npm install
    node index.js
    ```
+## Features
+- Chat with private documents securely!
+- Search and query your data easily using Natural Language only!
+- Keep all your LLMs up to date with the latest data.
 
 ## Example
 ![RAG_example](https://github.com/vteam27/RagXOllama/assets/94956831/11031cff-618f-47ad-b6dd-5f5306450526)
