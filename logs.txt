@@ -1,0 +1,59 @@
+zedd@VT-Pavilion:~/RagXOllama$ node index.js 
+Ingesting PDF Mixtral Tech Report.pdf
+...
+true
+Ingesting PDF PROXIMITY DETECTION SYSTEM.pdf
+...
+true
+Ingesting PDF did_you_know-booklet.pdf
+...
+true
+Retrieved Context:
+{
+  ids: [
+    [
+      'PROXIMITY DETECTION SYSTEM.pdf_chunk_1',
+      'Mixtral Tech Report.pdf_chunk_52',
+      'PROXIMITY DETECTION SYSTEM.pdf_chunk_2'
+    ]
+  ],
+  distances: [ [ 1.2201296091079712, 1.3540210723876953, 1.3805606365203857 ] ],
+  metadatas: [ [ [Object], [Object], [Object] ] ],
+  embeddings: null,
+  documents: [
+    [
+      " PROXIMITYDETECTIONSYSTEM Teammemberdetails: S.noNameRollnumber 1VaibhavTiwari102117089 2HarsiddakSinghBedi102117091 3Uday102117102 4Apoorva102117104 5HarkiratSingh102117111 6GarvGrover102117114 Objectives: ● ObstacleDetection:Theprimaryobjectiveistodetectthepresenceof objectsorobstaclesinthevicinityoftheultrasonicsensor.Thisis crucialforpreventingcollisionsinautonomousrobots,vehicles,or automatedmachinery. ● DistanceMeasurement:Thesystemcanmeasurethedistancebetween thesensorandthedetectedobject.Thisinformationcanbeusefulin applicationslikeparkingassistance,objecttracking,ordeterminingthe positionofanobjectrelativetothesensor. ● UserAlert:Thesystemusesabuzzertoprovideanaudiblealerttothe useroroperatorwhenanobjectisdetectedwithinthespecifiedrange. Thiscanbehelpfulinscenarioswherevisualfeedbackmightnotbe sufficientorpractical. ● Customization:Dependingontheapplication,thesystemcanbe customizedtosetspecificdetectionthresholds,triggerdistances,and alertpatterns.Itallowsflexibilitytoadapttovarioususecases. NeedAnalysis: TheneedforaProximityDetectionSystemarisesfromthefollowing considerations: ● Safety:Inroboticsandautonomoussystems,aproximitydetectionsystemis vitalforensuringthesafetyofboththemachineryandthesurrounding environment.Itpreventsaccidentsandcollisions. ● Efficiency:Inindustrialautomationandmanufacturing,thesystemhelpsin optimizingprocessesbyenablingmachinestodetectandrespondtothe presenceofobjectsefficiently,reducingdowntimeandimproving productivity. ● Security:Proximitydetectionisessentialforsecuritysystems,suchas intrusiondetectionoraccesscontrol.Unauthorizedentrycantriggerthe proximitysensor,activatinganalert. ● Navigation:Autonomousvehiclesanddronesrelyonproximitydetectionto navigateandavoidobstacles,makingthemsuitableforapplicationslike aerialphotography,packagedelivery,andsearchandrescueoperations. ● Assistance:Proximitydetectioncanassistindividualswithvisual impairmentsbydetectingobstaclesandprovidingauditoryfeedbacktohelp themnavigatesafely. ● TheworkingmethodologyofaProximityDetectionsystemusingArduino, anUltrasonicSensor,andaBuzzerinvolvesseveralstepstodetectobjects orobstaclesintheproximityofthesensorandprovideanaudiblealert. Here'sageneraloverviewofhowthesystemworks: WorkingMethodology: 1.UltrasonicSensorSetup:ConnecttheUltrasonicSensortotheArduino.The sensortypicallyhasfourpins:VCC,GND,Trigger(Trig),andEcho. Connectthemasfollows: ○ VCCto5VonArduino. ○ GNDtoGNDonArduino. ○ TrigtoadigitalpinonArduino(e.g.,D2). ○ EchotoanotherdigitalpinonArduino(e.g.,D3). 2.BuzzerSetup:ConnecttheBuzzertotheArduino.Connectonepinofthe buzzertoadigitalpin(e.g.,D8)andtheotherpintoGNDontheArduino. 3.ObjectDetection:Asthecoderunsinaloop,theUltrasonicSensor continuouslysendsoutultrasonicpulses,andtheArduinocalculatesthe distancetothedetectedobjectbasedonthetimeittakesfortheechoto return. 4.AlertActivation:Whenthemeasureddistancefallsbelowthesetthreshold, theArduinoactivatesthebuzzertoprovideanaudiblealert.Thisindicates thepresenceofanobjectorobstaclewithinthespecifiedrange.",
+      '15, and 31 (layers 0 and 31 respectively being the first and the last layers of the model). Surprisingly, we do not observe obvious patterns in the assignment of experts based on the topic. For instance, at all layers, the distribution of expert assignment is very similar for ArXiv papers',
+      "● Assistance:Proximitydetectioncanassistindividualswithvisual impairmentsbydetectingobstaclesandprovidingauditoryfeedbacktohelp themnavigatesafely. ● TheworkingmethodologyofaProximityDetectionsystemusingArduino, anUltrasonicSensor,andaBuzzerinvolvesseveralstepstodetectobjects orobstaclesintheproximityofthesensorandprovideanaudiblealert. Here'sageneraloverviewofhowthesystemworks: WorkingMethodology: 1.UltrasonicSensorSetup:ConnecttheUltrasonicSensortotheArduino.The sensortypicallyhasfourpins:VCC,GND,Trigger(Trig),andEcho. Connectthemasfollows: ○ VCCto5VonArduino. ○ GNDtoGNDonArduino. ○ TrigtoadigitalpinonArduino(e.g.,D2). ○ EchotoanotherdigitalpinonArduino(e.g.,D3). 2.BuzzerSetup:ConnecttheBuzzertotheArduino.Connectonepinofthe buzzertoadigitalpin(e.g.,D8)andtheotherpintoGNDontheArduino. 3.ObjectDetection:Asthecoderunsinaloop,theUltrasonicSensor continuouslysendsoutultrasonicpulses,andtheArduinocalculatesthe distancetothedetectedobjectbasedonthetimeittakesfortheechoto return. 4.AlertActivation:Whenthemeasureddistancefallsbelowthesetthreshold, theArduinoactivatesthebuzzertoprovideanaudiblealert.Thisindicates thepresenceofanobjectorobstaclewithinthespecifiedrange."
+    ]
+  ],
+  uris: null,
+  data: null
+}
+You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. Use the context only if you find it relevant, else discard the irrelevant context, If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise. Question: Who are the team members of the project Proximity Detection System? Context:  PROXIMITYDETECTIONSYSTEM Teammemberdetails: S.noNameRollnumber 1VaibhavTiwari102117089 2HarsiddakSinghBedi102117091 3Uday102117102 4Apoorva102117104 5HarkiratSingh102117111 6GarvGrover102117114 Objectives: ● ObstacleDetection:Theprimaryobjectiveistodetectthepresenceof objectsorobstaclesinthevicinityoftheultrasonicsensor.Thisis crucialforpreventingcollisionsinautonomousrobots,vehicles,or automatedmachinery. ● DistanceMeasurement:Thesystemcanmeasurethedistancebetween thesensorandthedetectedobject.Thisinformationcanbeusefulin applicationslikeparkingassistance,objecttracking,ordeterminingthe positionofanobjectrelativetothesensor. ● UserAlert:Thesystemusesabuzzertoprovideanaudiblealerttothe useroroperatorwhenanobjectisdetectedwithinthespecifiedrange. Thiscanbehelpfulinscenarioswherevisualfeedbackmightnotbe sufficientorpractical. ● Customization:Dependingontheapplication,thesystemcanbe customizedtosetspecificdetectionthresholds,triggerdistances,and alertpatterns.Itallowsflexibilitytoadapttovarioususecases. NeedAnalysis: TheneedforaProximityDetectionSystemarisesfromthefollowing considerations: ● Safety:Inroboticsandautonomoussystems,aproximitydetectionsystemis vitalforensuringthesafetyofboththemachineryandthesurrounding environment.Itpreventsaccidentsandcollisions. ● Efficiency:Inindustrialautomationandmanufacturing,thesystemhelpsin optimizingprocessesbyenablingmachinestodetectandrespondtothe presenceofobjectsefficiently,reducingdowntimeandimproving productivity. ● Security:Proximitydetectionisessentialforsecuritysystems,suchas intrusiondetectionoraccesscontrol.Unauthorizedentrycantriggerthe proximitysensor,activatinganalert. ● Navigation:Autonomousvehiclesanddronesrelyonproximitydetectionto navigateandavoidobstacles,makingthemsuitableforapplicationslike aerialphotography,packagedelivery,andsearchandrescueoperations. ● Assistance:Proximitydetectioncanassistindividualswithvisual impairmentsbydetectingobstaclesandprovidingauditoryfeedbacktohelp themnavigatesafely. ● TheworkingmethodologyofaProximityDetectionsystemusingArduino, anUltrasonicSensor,andaBuzzerinvolvesseveralstepstodetectobjects orobstaclesintheproximityofthesensorandprovideanaudiblealert. Here'sageneraloverviewofhowthesystemworks: WorkingMethodology: 1.UltrasonicSensorSetup:ConnecttheUltrasonicSensortotheArduino.The sensortypicallyhasfourpins:VCC,GND,Trigger(Trig),andEcho. Connectthemasfollows: ○ VCCto5VonArduino. ○ GNDtoGNDonArduino. ○ TrigtoadigitalpinonArduino(e.g.,D2). ○ EchotoanotherdigitalpinonArduino(e.g.,D3). 2.BuzzerSetup:ConnecttheBuzzertotheArduino.Connectonepinofthe buzzertoadigitalpin(e.g.,D8)andtheotherpintoGNDontheArduino. 3.ObjectDetection:Asthecoderunsinaloop,theUltrasonicSensor continuouslysendsoutultrasonicpulses,andtheArduinocalculatesthe distancetothedetectedobjectbasedonthetimeittakesfortheechoto return. 4.AlertActivation:Whenthemeasureddistancefallsbelowthesetthreshold, theArduinoactivatesthebuzzertoprovideanaudiblealert.Thisindicates thepresenceofanobjectorobstaclewithinthespecifiedrange.,15, and 31 (layers 0 and 31 respectively being the first and the last layers of the model). Surprisingly, we do not observe obvious patterns in the assignment of experts based on the topic. For instance, at all layers, the distribution of expert assignment is very similar for ArXiv papers,● Assistance:Proximitydetectioncanassistindividualswithvisual impairmentsbydetectingobstaclesandprovidingauditoryfeedbacktohelp themnavigatesafely. ● TheworkingmethodologyofaProximityDetectionsystemusingArduino, anUltrasonicSensor,andaBuzzerinvolvesseveralstepstodetectobjects orobstaclesintheproximityofthesensorandprovideanaudiblealert. Here'sageneraloverviewofhowthesystemworks: WorkingMethodology: 1.UltrasonicSensorSetup:ConnecttheUltrasonicSensortotheArduino.The sensortypicallyhasfourpins:VCC,GND,Trigger(Trig),andEcho. Connectthemasfollows: ○ VCCto5VonArduino. ○ GNDtoGNDonArduino. ○ TrigtoadigitalpinonArduino(e.g.,D2). ○ EchotoanotherdigitalpinonArduino(e.g.,D3). 2.BuzzerSetup:ConnecttheBuzzertotheArduino.Connectonepinofthe buzzertoadigitalpin(e.g.,D8)andtheotherpintoGNDontheArduino. 3.ObjectDetection:Asthecoderunsinaloop,theUltrasonicSensor continuouslysendsoutultrasonicpulses,andtheArduinocalculatesthe distancetothedetectedobjectbasedonthetimeittakesfortheechoto return. 4.AlertActivation:Whenthemeasureddistancefallsbelowthesetthreshold, theArduinoactivatesthebuzzertoprovideanaudiblealert.Thisindicates thepresenceofanobjectorobstaclewithinthespecifiedrange. Answer:
+{
+  model: 'llama3',
+  created_at: '2024-04-21T11:36:43.799376307Z',
+  message: {
+    role: 'assistant',
+    content: 'Based on the provided context, I can answer your question about the team members of the Proximity Detection System project.\n' +
+      '\n' +
+      'The team members are:\n' +
+      '\n' +
+      '1. Vaibhav Tiwari\n' +
+      '2. Harsiddak Singh Bedi\n' +
+      '3. Uday\n' +
+      '4. Apoorva\n' +
+      '5. Harkirat Singh\n' +
+      '6. Garv Grover'
+  },
+  done: true,
+  total_duration: 27134768444,
+  load_duration: 2601600,
+  prompt_eval_count: 404,
+  prompt_eval_duration: 3108088000,
+  eval_count: 74,
+  eval_duration: 23867802000
+}
+
+zedd@VT-Pavilion:~/RagXOllama$ 
