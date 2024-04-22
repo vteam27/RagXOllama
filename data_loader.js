@@ -1,12 +1,8 @@
 import pdf from 'pdf-parse-fork';
 import fs from 'fs';
 import path from 'path';
+import docx from 'docx-parser'
 
-async function extractTextFromPDF(pdfPath) {
-  const dataBuffer = fs.readFileSync(pdfPath);
-  const pdfText=await pdf(dataBuffer);
-  return pdfText.text;
-}
 
 function chunkText(text) {
   const words = text.split(/\s+/);
@@ -22,15 +18,35 @@ function chunkText(text) {
   return chunks;
 }
 
-export async function addPDFToCollection(pdfPath, collection) {
-  const pdfText = await extractTextFromPDF(pdfPath);
-  const chunks = chunkText(pdfText);
+//PDF Parser
+async function extractTextFromPDF(pdfPath) {
+  const dataBuffer = fs.readFileSync(pdfPath);
+  const pdfText=await pdf(dataBuffer);
+  return pdfText.text;
+}
 
-  const pdfName = pdfPath.split('/').pop(); // Get PDF name from path
-  const ids = chunks.map((_, index) => `${pdfName}_chunk_${index + 1}`);
-  const metadatas = chunks.map(() => ({ source: pdfName }));
-  
-  console.log(`Ingesting PDF ${pdfName}\n...`)
+//Docx Parser
+async function extractTextFromDocx(filePath) {
+  return new Promise((resolve, reject) => {
+    docx.parseDocx(filePath, function(data) {
+      if (data) {
+        resolve(data);
+      } else {
+        reject(new Error("No data returned from parseDocx"));
+      }
+    });
+  });
+}
+
+
+// Chunk and add text to collection
+export async function addTextToCollection(text, filePath, collection) {
+  console.log(`Ingesting File ${filePath}\n...`)
+  const chunks=chunkText(text);
+  const fileName = filePath.split('/').pop(); // Get PDF name from path
+  const ids = chunks.map((_, index) => `${fileName}_chunk_${index + 1}`);
+  const metadatas = chunks.map(() => ({ source: fileName }));
+
   const er1=await collection.add({
     ids,
     metadatas,
@@ -40,13 +56,26 @@ export async function addPDFToCollection(pdfPath, collection) {
   console.log(er1);
 }
 
-export async function addPDFsToCollection(folderPath, collection) {
+
+//Master Parser
+export async function addFilesToCollection(folderPath, collection) {
   const files = fs.readdirSync(folderPath);
   
   for (const file of files) {
+    const filePath = path.join(folderPath, file);
     if (path.extname(file).toLowerCase() === '.pdf') {
-      const filePath = path.join(folderPath, file);
-      await addPDFToCollection(filePath, collection);
+      const text= await extractTextFromPDF(filePath);
+      await addTextToCollection(text, filePath, collection);
     }
+    else if (path.extname(file).toLowerCase() === '.docx') {
+      const text=await extractTextFromDocx(filePath);
+      await addTextToCollection(text, filePath, collection);
+    }
+    else if (path.extname(file).toLowerCase() === '.txt') {
+      const text = fs.readFileSync(filePath, 'utf8');
+      await addTextToCollection(text, filePath, collection);
+    }
+    else
+    continue;
   }
 }

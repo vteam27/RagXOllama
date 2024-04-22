@@ -12,6 +12,7 @@
   "dependencies": {
     "chromadb": "^1.8.1",
     "chromadb-default-embed": "^2.13.2",
+    "docx-parser": "^0.2.1",
     "dotenv": "^16.4.5",
     "fs": "^0.0.1-security",
     "ollama": "^0.5.0",

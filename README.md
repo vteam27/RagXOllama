@@ -47,8 +47,8 @@ Retrieval-Augmented Generation (RAG) allows:
 All contributions are welcome!
 - [x] Setup chromaDB and ollama
 - [x] Build a basic RAG pipeline
-- [x] Build a data loader to chunk and ingest data into chromaDB (support PDFs)
-- [ ] Add support for .docx, csv, txt files
+- [x] Build a data loader to chunk and ingest data into chromaDB.
+- [x] Add support for text, pdf and docx files.
 - [ ] Implement a REST Architecture
 - [ ] Containarize the backend using docker
 - [ ] Build UI for easy interaction

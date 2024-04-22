@@ -1,59 +1,66 @@
 zedd@VT-Pavilion:~/RagXOllama$ node index.js 
-Ingesting PDF Mixtral Tech Report.pdf
+Ingesting File Docs/Mixtral Tech Report.pdf
 ...
 true
-Ingesting PDF PROXIMITY DETECTION SYSTEM.pdf
+Ingesting File Docs/PROXIMITY DETECTION SYSTEM.pdf
 ...
 true
-Ingesting PDF did_you_know-booklet.pdf
+Ingesting File Docs/did_you_know-booklet.pdf
+...
+true
+Ingesting File Docs/nma.docx
+...
+true
+Ingesting File Docs/wiki.txt
 ...
 true
 Retrieved Context:
 {
   ids: [
     [
-      'PROXIMITY DETECTION SYSTEM.pdf_chunk_1',
-      'Mixtral Tech Report.pdf_chunk_52',
-      'PROXIMITY DETECTION SYSTEM.pdf_chunk_2'
+      'nma.docx_chunk_1',
+      'nma.docx_chunk_24',
+      'nma.docx_chunk_31',
+      'nma.docx_chunk_45',
+      'nma.docx_chunk_36'
     ]
   ],
-  distances: [ [ 1.2201296091079712, 1.3540210723876953, 1.3805606365203857 ] ],
-  metadatas: [ [ [Object], [Object], [Object] ] ],
+  distances: [
+    [
+      1.1106369100795088,
+      1.250379479443009,
+      1.30488503788733,
+      1.3208756965024055,
+      1.3356942047560305
+    ]
+  ],
+  metadatas: [ [ [Object], [Object], [Object], [Object], [Object] ] ],
   embeddings: null,
   documents: [
     [
-      " PROXIMITYDETECTIONSYSTEM Teammemberdetails: S.noNameRollnumber 1VaibhavTiwari102117089 2HarsiddakSinghBedi102117091 3Uday102117102 4Apoorva102117104 5HarkiratSingh102117111 6GarvGrover102117114 Objectives: ● ObstacleDetection:Theprimaryobjectiveistodetectthepresenceof objectsorobstaclesinthevicinityoftheultrasonicsensor.Thisis crucialforpreventingcollisionsinautonomousrobots,vehicles,or automatedmachinery. ● DistanceMeasurement:Thesystemcanmeasurethedistancebetween thesensorandthedetectedobject.Thisinformationcanbeusefulin applicationslikeparkingassistance,objecttracking,ordeterminingthe positionofanobjectrelativetothesensor. ● UserAlert:Thesystemusesabuzzertoprovideanaudiblealerttothe useroroperatorwhenanobjectisdetectedwithinthespecifiedrange. Thiscanbehelpfulinscenarioswherevisualfeedbackmightnotbe sufficientorpractical. ● Customization:Dependingontheapplication,thesystemcanbe customizedtosetspecificdetectionthresholds,triggerdistances,and alertpatterns.Itallowsflexibilitytoadapttovarioususecases. NeedAnalysis: TheneedforaProximityDetectionSystemarisesfromthefollowing considerations: ● Safety:Inroboticsandautonomoussystems,aproximitydetectionsystemis vitalforensuringthesafetyofboththemachineryandthesurrounding environment.Itpreventsaccidentsandcollisions. ● Efficiency:Inindustrialautomationandmanufacturing,thesystemhelpsin optimizingprocessesbyenablingmachinestodetectandrespondtothe presenceofobjectsefficiently,reducingdowntimeandimproving productivity. ● Security:Proximitydetectionisessentialforsecuritysystems,suchas intrusiondetectionoraccesscontrol.Unauthorizedentrycantriggerthe proximitysensor,activatinganalert. ● Navigation:Autonomousvehiclesanddronesrelyonproximitydetectionto navigateandavoidobstacles,makingthemsuitableforapplicationslike aerialphotography,packagedelivery,andsearchandrescueoperations. ● Assistance:Proximitydetectioncanassistindividualswithvisual impairmentsbydetectingobstaclesandprovidingauditoryfeedbacktohelp themnavigatesafely. ● TheworkingmethodologyofaProximityDetectionsystemusingArduino, anUltrasonicSensor,andaBuzzerinvolvesseveralstepstodetectobjects orobstaclesintheproximityofthesensorandprovideanaudiblealert. Here'sageneraloverviewofhowthesystemworks: WorkingMethodology: 1.UltrasonicSensorSetup:ConnecttheUltrasonicSensortotheArduino.The sensortypicallyhasfourpins:VCC,GND,Trigger(Trig),andEcho. Connectthemasfollows: ○ VCCto5VonArduino. ○ GNDtoGNDonArduino. ○ TrigtoadigitalpinonArduino(e.g.,D2). ○ EchotoanotherdigitalpinonArduino(e.g.,D3). 2.BuzzerSetup:ConnecttheBuzzertotheArduino.Connectonepinofthe buzzertoadigitalpin(e.g.,D8)andtheotherpintoGNDontheArduino. 3.ObjectDetection:Asthecoderunsinaloop,theUltrasonicSensor continuouslysendsoutultrasonicpulses,andtheArduinocalculatesthe distancetothedetectedobjectbasedonthetimeittakesfortheechoto return. 4.AlertActivation:Whenthemeasureddistancefallsbelowthesetthreshold, theArduinoactivatesthebuzzertoprovideanaudiblealert.Thisindicates thepresenceofanobjectorobstaclewithinthespecifiedrange.",
-      '15, and 31 (layers 0 and 31 respectively being the first and the last layers of the model). Surprisingly, we do not observe obvious patterns in the assignment of experts based on the topic. For instance, at all layers, the distribution of expert assignment is very similar for ArXiv papers',
-      "● Assistance:Proximitydetectioncanassistindividualswithvisual impairmentsbydetectingobstaclesandprovidingauditoryfeedbacktohelp themnavigatesafely. ● TheworkingmethodologyofaProximityDetectionsystemusingArduino, anUltrasonicSensor,andaBuzzerinvolvesseveralstepstodetectobjects orobstaclesintheproximityofthesensorandprovideanaudiblealert. Here'sageneraloverviewofhowthesystemworks: WorkingMethodology: 1.UltrasonicSensorSetup:ConnecttheUltrasonicSensortotheArduino.The sensortypicallyhasfourpins:VCC,GND,Trigger(Trig),andEcho. Connectthemasfollows: ○ VCCto5VonArduino. ○ GNDtoGNDonArduino. ○ TrigtoadigitalpinonArduino(e.g.,D2). ○ EchotoanotherdigitalpinonArduino(e.g.,D3). 2.BuzzerSetup:ConnecttheBuzzertotheArduino.Connectonepinofthe buzzertoadigitalpin(e.g.,D8)andtheotherpintoGNDontheArduino. 3.ObjectDetection:Asthecoderunsinaloop,theUltrasonicSensor continuouslysendsoutultrasonicpulses,andtheArduinocalculatesthe distancetothedetectedobjectbasedonthetimeittakesfortheechoto return. 4.AlertActivation:Whenthemeasureddistancefallsbelowthesetthreshold, theArduinoactivatesthebuzzertoprovideanaudiblealert.Thisindicates thepresenceofanobjectorobstaclewithinthespecifiedrange."
+      ' OreSense PS ID : SIH1511PS Title : Real time knowledge of ore body being mined outObjective: Determine ore quality instantlyShow real time position of miner and ore body estimationEnhance miner safety through efficient response mechanism Introduction:Our cutting-edge hardware device has been meticulously engineered to seamlessly capture data from an',
+      'precise ore quality predictions.3. Dashboard Functionality:The user interface comprises different sections for comprehensive monitoring and control. The Home section displays spectral data and visual feeds, presenting computed ML outputs. The Data section provides a detailed analysis of sensor data, presented through graphs, and offers environmental information. The Map section depicts',
+      'from the camera, sent to the Raspberry Pi over a local network. The ML and DL algorithms, implemented in PyTorch, process the data on the edge device using Flask. Linear regression and CNN models provide insights into ore impurity and grade quality, respectively. The results are displayed on the LCD',
+      'model, fed with results of spectral data and visual data, classifies ore in real time, refining its weights with the latest chemical analysis results. This integrated strategy ensures a perpetual improvement loop, allowing both models to adapt and evolve over time. The result is a progressively accurate prediction of ore',
+      'scenario as closely as possible, ensuring the robustness and efficacy of our predictive model.IR Spectroscopy Data from Kaggle:Source Explanation: We utilized an IR spectroscopy dataset available on Kaggle, a reputable platform for diverse datasets.Significance: This dataset forms the foundation for the analysis of ore composition. While not directly sourced from'
     ]
   ],
   uris: null,
   data: null
 }
-You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. Use the context only if you find it relevant, else discard the irrelevant context, If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise. Question: Who are the team members of the project Proximity Detection System? Context:  PROXIMITYDETECTIONSYSTEM Teammemberdetails: S.noNameRollnumber 1VaibhavTiwari102117089 2HarsiddakSinghBedi102117091 3Uday102117102 4Apoorva102117104 5HarkiratSingh102117111 6GarvGrover102117114 Objectives: ● ObstacleDetection:Theprimaryobjectiveistodetectthepresenceof objectsorobstaclesinthevicinityoftheultrasonicsensor.Thisis crucialforpreventingcollisionsinautonomousrobots,vehicles,or automatedmachinery. ● DistanceMeasurement:Thesystemcanmeasurethedistancebetween thesensorandthedetectedobject.Thisinformationcanbeusefulin applicationslikeparkingassistance,objecttracking,ordeterminingthe positionofanobjectrelativetothesensor. ● UserAlert:Thesystemusesabuzzertoprovideanaudiblealerttothe useroroperatorwhenanobjectisdetectedwithinthespecifiedrange. Thiscanbehelpfulinscenarioswherevisualfeedbackmightnotbe sufficientorpractical. ● Customization:Dependingontheapplication,thesystemcanbe customizedtosetspecificdetectionthresholds,triggerdistances,and alertpatterns.Itallowsflexibilitytoadapttovarioususecases. NeedAnalysis: TheneedforaProximityDetectionSystemarisesfromthefollowing considerations: ● Safety:Inroboticsandautonomoussystems,aproximitydetectionsystemis vitalforensuringthesafetyofboththemachineryandthesurrounding environment.Itpreventsaccidentsandcollisions. ● Efficiency:Inindustrialautomationandmanufacturing,thesystemhelpsin optimizingprocessesbyenablingmachinestodetectandrespondtothe presenceofobjectsefficiently,reducingdowntimeandimproving productivity. ● Security:Proximitydetectionisessentialforsecuritysystems,suchas intrusiondetectionoraccesscontrol.Unauthorizedentrycantriggerthe proximitysensor,activatinganalert. ● Navigation:Autonomousvehiclesanddronesrelyonproximitydetectionto navigateandavoidobstacles,makingthemsuitableforapplicationslike aerialphotography,packagedelivery,andsearchandrescueoperations. ● Assistance:Proximitydetectioncanassistindividualswithvisual impairmentsbydetectingobstaclesandprovidingauditoryfeedbacktohelp themnavigatesafely. ● TheworkingmethodologyofaProximityDetectionsystemusingArduino, anUltrasonicSensor,andaBuzzerinvolvesseveralstepstodetectobjects orobstaclesintheproximityofthesensorandprovideanaudiblealert. Here'sageneraloverviewofhowthesystemworks: WorkingMethodology: 1.UltrasonicSensorSetup:ConnecttheUltrasonicSensortotheArduino.The sensortypicallyhasfourpins:VCC,GND,Trigger(Trig),andEcho. Connectthemasfollows: ○ VCCto5VonArduino. ○ GNDtoGNDonArduino. ○ TrigtoadigitalpinonArduino(e.g.,D2). ○ EchotoanotherdigitalpinonArduino(e.g.,D3). 2.BuzzerSetup:ConnecttheBuzzertotheArduino.Connectonepinofthe buzzertoadigitalpin(e.g.,D8)andtheotherpintoGNDontheArduino. 3.ObjectDetection:Asthecoderunsinaloop,theUltrasonicSensor continuouslysendsoutultrasonicpulses,andtheArduinocalculatesthe distancetothedetectedobjectbasedonthetimeittakesfortheechoto return. 4.AlertActivation:Whenthemeasureddistancefallsbelowthesetthreshold, theArduinoactivatesthebuzzertoprovideanaudiblealert.Thisindicates thepresenceofanobjectorobstaclewithinthespecifiedrange.,15, and 31 (layers 0 and 31 respectively being the first and the last layers of the model). Surprisingly, we do not observe obvious patterns in the assignment of experts based on the topic. For instance, at all layers, the distribution of expert assignment is very similar for ArXiv papers,● Assistance:Proximitydetectioncanassistindividualswithvisual impairmentsbydetectingobstaclesandprovidingauditoryfeedbacktohelp themnavigatesafely. ● TheworkingmethodologyofaProximityDetectionsystemusingArduino, anUltrasonicSensor,andaBuzzerinvolvesseveralstepstodetectobjects orobstaclesintheproximityofthesensorandprovideanaudiblealert. Here'sageneraloverviewofhowthesystemworks: WorkingMethodology: 1.UltrasonicSensorSetup:ConnecttheUltrasonicSensortotheArduino.The sensortypicallyhasfourpins:VCC,GND,Trigger(Trig),andEcho. Connectthemasfollows: ○ VCCto5VonArduino. ○ GNDtoGNDonArduino. ○ TrigtoadigitalpinonArduino(e.g.,D2). ○ EchotoanotherdigitalpinonArduino(e.g.,D3). 2.BuzzerSetup:ConnecttheBuzzertotheArduino.Connectonepinofthe buzzertoadigitalpin(e.g.,D8)andtheotherpintoGNDontheArduino. 3.ObjectDetection:Asthecoderunsinaloop,theUltrasonicSensor continuouslysendsoutultrasonicpulses,andtheArduinocalculatesthe distancetothedetectedobjectbasedonthetimeittakesfortheechoto return. 4.AlertActivation:Whenthemeasureddistancefallsbelowthesetthreshold, theArduinoactivatesthebuzzertoprovideanaudiblealert.Thisindicates thepresenceofanobjectorobstaclewithinthespecifiedrange. Answer:
+You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. Use the relevant part of the context provided. If you don't know the answer, just say that you don't know. Keep the answer concise and start directly to the point. Question: Tell me about the Project OreSense. Context:  OreSense PS ID : SIH1511PS Title : Real time knowledge of ore body being mined outObjective: Determine ore quality instantlyShow real time position of miner and ore body estimationEnhance miner safety through efficient response mechanism Introduction:Our cutting-edge hardware device has been meticulously engineered to seamlessly capture data from an,precise ore quality predictions.3. Dashboard Functionality:The user interface comprises different sections for comprehensive monitoring and control. The Home section displays spectral data and visual feeds, presenting computed ML outputs. The Data section provides a detailed analysis of sensor data, presented through graphs, and offers environmental information. The Map section depicts,from the camera, sent to the Raspberry Pi over a local network. The ML and DL algorithms, implemented in PyTorch, process the data on the edge device using Flask. Linear regression and CNN models provide insights into ore impurity and grade quality, respectively. The results are displayed on the LCD,model, fed with results of spectral data and visual data, classifies ore in real time, refining its weights with the latest chemical analysis results. This integrated strategy ensures a perpetual improvement loop, allowing both models to adapt and evolve over time. The result is a progressively accurate prediction of ore,scenario as closely as possible, ensuring the robustness and efficacy of our predictive model.IR Spectroscopy Data from Kaggle:Source Explanation: We utilized an IR spectroscopy dataset available on Kaggle, a reputable platform for diverse datasets.Significance: This dataset forms the foundation for the analysis of ore composition. While not directly sourced from Answer:
 {
   model: 'llama3',
-  created_at: '2024-04-21T11:36:43.799376307Z',
+  created_at: '2024-04-22T09:09:39.417873004Z',
   message: {
     role: 'assistant',
-    content: 'Based on the provided context, I can answer your question about the team members of the Proximity Detection System project.\n' +
-      '\n' +
-      'The team members are:\n' +
-      '\n' +
-      '1. Vaibhav Tiwari\n' +
-      '2. Harsiddak Singh Bedi\n' +
-      '3. Uday\n' +
-      '4. Apoorva\n' +
-      '5. Harkirat Singh\n' +
-      '6. Garv Grover'
+    content: 'The Project OreSense is an initiative that aims to determine the quality of an ore body being mined in real-time, using cutting-edge hardware and machine learning (ML) algorithms. The project involves developing a dashboard with various sections to monitor and control the mining process, providing insights into ore impurity and grade quality.'
   },
   done: true,
-  total_duration: 27134768444,
-  load_duration: 2601600,
-  prompt_eval_count: 404,
-  prompt_eval_duration: 3108088000,
-  eval_count: 74,
-  eval_duration: 23867802000
+  total_duration: 20258119943,
+  load_duration: 3093900,
+  prompt_eval_count: 342,
+  prompt_eval_duration: 3025270000,
+  eval_count: 63,
+  eval_duration: 17074956000
 }
-
-zedd@VT-Pavilion:~/RagXOllama$ 
