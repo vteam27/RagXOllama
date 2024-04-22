@@ -48,6 +48,9 @@ All contributions are welcome!
 - [x] Setup chromaDB and ollama
 - [x] Build a basic RAG pipeline
 - [x] Build a data loader to chunk and ingest data into chromaDB (support PDFs)
+- [ ] Add support for .docx, csv, txt files
+- [ ] Implement a REST Architecture
+- [ ] Containarize the backend using docker
 - [ ] Build UI for easy interaction
 - [ ] Implement advanced RAG techniques
 - [ ] Use knowledge graphs (neo4j)?
