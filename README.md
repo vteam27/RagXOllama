@@ -19,6 +19,85 @@ ollama run llama3
    npm install
    node index.js
    ```
+## API Docs
+To use the REST api architecture, run ```node REST.js```
+
+Endpoints  :
+
+### 1. Upload Files
+
+```
+POST http://localhost:3000/uploadFiles
+```
+
+#### Description
+
+Upload files to the database collection.
+
+#### Request Body
+
+- **pdfPath**: Directory name containing the files to be uploaded.
+
+```json
+{
+  "filePath": "directory_name"
+}
+```
+
+#### Response
+
+- **Status**: `200 OK`
+- **Body**:
+
+```json
+{
+  "message": "Files added to database successfully"
+}
+```
+
+### 2. Chat
+
+```
+POST http://localhost:3000/chat
+```
+
+#### Description
+
+Query the database with a question to retrieve relevant context and answer using a LLM model.
+
+#### Request Body
+
+- **query**: Question to ask the assistant.
+
+```json
+{
+  "query": "Your question here"
+}
+```
+
+#### Response
+
+- **Status**: `200 OK`
+- **Body**:
+
+```json
+{
+  "model": "llama3",
+  "created_at": "timestamp",
+  "message": {
+    "role": "assistant",
+    "content": "Answer from the assistant"
+  },
+  "done": true,
+  "total_duration": 46405704803,
+  "load_duration": 21523638018,
+  "prompt_eval_count": 397,
+  "prompt_eval_duration": 4001841000,
+  "eval_count": 64,
+  "eval_duration": 20723775000
+}
+```
+
 ## Features
 - Chat with private documents securely!
 - Search and query your data easily using Natural Language only!
@@ -49,7 +128,8 @@ All contributions are welcome!
 - [x] Build a basic RAG pipeline
 - [x] Build a data loader to chunk and ingest data into chromaDB.
 - [x] Add support for text, pdf and docx files.
-- [ ] Implement a REST Architecture
+- [x] Implement a REST Architecture
+- [ ] Implement upload functionality
 - [ ] Containarize the backend using docker
 - [ ] Build UI for easy interaction
 - [ ] Implement advanced RAG techniques

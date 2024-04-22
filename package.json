@@ -10,10 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "chromadb": "^1.8.1",
     "chromadb-default-embed": "^2.13.2",
+    "cors": "^2.8.5",
     "docx-parser": "^0.2.1",
     "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "fs": "^0.0.1-security",
     "ollama": "^0.5.0",
     "pdf-parse-fork": "^1.2.0"
