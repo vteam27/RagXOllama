@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  ragxollama:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - chromadb
+      - ollama
+    environment:
+      CHROMA_URL: "http://chromadb:8000"
+      OLLAMA_URL: "http://ollama:11434"
+    networks:
+      - my_network
+
+  chromadb:
+    image: chromadb/chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chroma:/chroma/chroma
+    environment:
+      IS_PERSISTENT: "TRUE"
+      ANONYMIZED_TELEMETRY: "TRUE"
+    networks:
+      - my_network
+
+  ollama:
+    image: ollama/ollama
+    volumes:
+      - ollama-data:/root/.ollama
+    ports:
+      - "11434:11434"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
+
+volumes:
+  ollama-data:

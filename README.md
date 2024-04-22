@@ -1,9 +1,23 @@
 # RagXOllama
-A Minimal Node.js RESTful server for a Retrieval-Augmented Generation (RAG) system using ChromaDB and Ollama!
+A minimal Node.js RESTful server for a Retrieval-Augmented Generation (RAG) system using ChromaDB and Ollama!
 
 This repo is intended to be used as a template to easily integrate any LLM with a basic RAG functionality into your MERN (or any other node.js) stack apps natively.
+![image](https://github.com/vteam27/RagXOllama/assets/94956831/2c7a8bd3-0b95-4afe-946f-d7f9e36ae1df)
+
 
 ## Setup
+### Method 1 (using Docker)
+0. Add your documents to ```Docs/ ```folder.
+1. Simply build the docker containers using
+```
+git clone https://github.com/vteam27/RagXOllama
+cd RagXOllama
+docker compose up 
+```
+2. Wait for the data to be ingested to DB and the LLM model to be downloaded.
+3. Go to ```http://localhost:3000``` 
+
+### Method 2 (build locally)
 1. [Ollama](https://ollama.com/) : To serve open source LLMs locally (one time setup)
     ```
     ollama serve
@@ -17,6 +31,7 @@ This repo is intended to be used as a template to easily integrate any LLM with 
 3. Add your PDF documents to ```Docs/ ```
 4. Install dependencies and run!
    ```
+   git clone https://github.com/vteam27/RagXOllama
    cd RagXOllama
    npm install
    node app.js
@@ -58,5 +73,5 @@ With the help of Retrieval-Augmented Generation (RAG) we can achieve:
 - [x] Add support for text, pdf and docx files.
 - [x] Implement a REST API Architecture.
 - [x] Build demo UI for easy interaction
-- [ ] Containarize
+- [x] Containarize
 
