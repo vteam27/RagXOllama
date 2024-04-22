@@ -1,12 +1,14 @@
 # RagXOllama
-Node.js server for a Retrieval-Augmented Generation (RAG) system using ChromaDB and Ollama!
+A Minimal Node.js RESTful server for a Retrieval-Augmented Generation (RAG) system using ChromaDB and Ollama!
+
+This repo is intended to be used as a template to easily integrate any LLM with a basic RAG functionality into your MERN (or any other node.js) stack apps natively.
 
 ## Setup
 1. [Ollama](https://ollama.com/) : To serve open source LLMs locally (one time setup)
-```
-ollama serve
-ollama run llama3
-```
+    ```
+    ollama serve
+    ollama run llama3
+    ```
 2. [ChromaDB Backend](https://docs.trychroma.com/deployment): Spin up the ChromaDB core
    ```
    docker pull chromadb/chroma
@@ -17,105 +19,31 @@ ollama run llama3
    ```
    cd RagXOllama
    npm install
-   node index.js
+   node app.js
    ```
-## API Docs
-To use the REST api architecture, run ```node REST.js```
+5. Go to ```http://localhost:3000``` to chat using a web demo.
 
-Endpoints  :
-
-### 1. Upload Files
-
-```
-POST http://localhost:3000/uploadFiles
-```
-
-#### Description
-
-Upload files to the database collection.
-
-#### Request Body
-
-- **pdfPath**: Directory name containing the files to be uploaded.
-
-```json
-{
-  "filePath": "directory_name"
-}
-```
-
-#### Response
-
-- **Status**: `200 OK`
-- **Body**:
-
-```json
-{
-  "message": "Files added to database successfully"
-}
-```
-
-### 2. Chat
-
-```
-POST http://localhost:3000/chat
-```
-
-#### Description
-
-Query the database with a question to retrieve relevant context and answer using a LLM model.
-
-#### Request Body
-
-- **query**: Question to ask the assistant.
-
-```json
-{
-  "query": "Your question here"
-}
-```
-
-#### Response
-
-- **Status**: `200 OK`
-- **Body**:
-
-```json
-{
-  "model": "llama3",
-  "created_at": "timestamp",
-  "message": {
-    "role": "assistant",
-    "content": "Answer from the assistant"
-  },
-  "done": true,
-  "total_duration": 46405704803,
-  "load_duration": 21523638018,
-  "prompt_eval_count": 397,
-  "prompt_eval_duration": 4001841000,
-  "eval_count": 64,
-  "eval_duration": 20723775000
-}
-```
+6. Alternatively, you can run ``` node pipeline.js ``` to interact using terminal, easy development and testing.
 
 ## Features
 - Chat with private documents securely!
 - Search and query your data easily using Natural Language only!
 - Keep all your LLMs up to date with the latest data.
+- Use any open source LLM of your choice. [Browse LLMs](https://ollama.com/library)
 
 ## Example
 ![RAG_example](https://github.com/vteam27/RagXOllama/assets/94956831/11031cff-618f-47ad-b6dd-5f5306450526)
 
 0. Ingestion: Feed relevant information into the chromaDB vector store collection.
-1. Retrieve: We retrieve relevant (top n) chunks of factual information stored in chromaDB using squared l2 normalized euclidean distance between vectors(in this case).
+1. Retrieve: We retrieve relevant (top n) chunks of factual information stored in chromaDB using a algorithm that calculates it's similarity score with the user query.
 2. Augment: We append this context into our prompt.
 3. Generate: We feed this prompt to a ```8B llama3 4-bit quantized``` model served by ollama to generate the desired response.
 
 View the ```logs.txt``` file for the full output of my code.
 
-## Explaination
+## About RAG
 
-Retrieval-Augmented Generation (RAG) allows:
+With the help of Retrieval-Augmented Generation (RAG) we can achieve:
 - Improved Factual Accuracy: By relying on retrieved information, RAG systems can ensure answers are grounded in real-world data.
 - Domain Specificity: RAG allows you to integrate domain-specific knowledge bases, making the system more knowledgeable in a particular area.
 - Adaptability to New Information: By using external knowledge sources, RAG systems can stay up-to-date with the latest information, even if the LLM itself wasn't specifically trained on it.
@@ -123,16 +51,12 @@ Retrieval-Augmented Generation (RAG) allows:
 ![image](https://github.com/vteam27/RagXOllama/assets/94956831/146028a4-ef93-4c98-9408-b66f2db697fe)
 
 ## Milestones
-All contributions are welcome!
+
 - [x] Setup chromaDB and ollama
 - [x] Build a basic RAG pipeline
 - [x] Build a data loader to chunk and ingest data into chromaDB.
 - [x] Add support for text, pdf and docx files.
-- [x] Implement a REST Architecture
-- [ ] Implement upload functionality
-- [ ] Containarize the backend using docker
-- [ ] Build UI for easy interaction
-- [ ] Implement advanced RAG techniques
-- [ ] Use knowledge graphs (neo4j)?
-- [ ] Deploy on cloud?
-- [ ] TBD
+- [x] Implement a REST API Architecture.
+- [x] Build demo UI for easy interaction
+- [ ] Containarize
+

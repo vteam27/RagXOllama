@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RagXOllama</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RagXOllama</h1>
+
+        <div class="chat-section">
+            <h2>Chat</h2>
+            <div>
+                <label for="query">Query:</label>
+                <input type="text" id="query" name="query" required>
+                <button onclick="sendQuery()">Send</button>
+            </div>
+            <br>
+            <div id="chatResponse"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const queryInput = document.getElementById('query');
+    const chatResponse = document.getElementById('chatResponse');
+
+
+    window.sendQuery = async () => {
+        chatResponse.textContent = "Fetching Response(...)";
+        const query = queryInput.value;
+        try {
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ query })
+            });
+            const data = await response.json();
+            chatResponse.innerHTML = data.message.content;
+        } catch (error) {
+            console.error('Error sending query:', error);
+        }
+    };
+});
+
+    </script>
+</body>
+</html>

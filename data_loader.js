@@ -6,7 +6,7 @@ import docx from 'docx-parser'
 
 function chunkText(text) {
   const words = text.split(/\s+/);
-  const chunkSize = 50
+  const chunkSize = 100
   ;
   const chunks = [];
   
