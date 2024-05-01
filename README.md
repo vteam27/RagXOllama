@@ -6,11 +6,14 @@ A minimal Node.js RESTful server for a Retrieval-Augmented Generation (RAG) syst
 
 ## Setup
 ### Method 1 (using Docker)
-0. Add your documents to ```Docs/ ```folder.
-1. Simply build the docker containers using
+1. Clone this repo.
 ```
 git clone https://github.com/vteam27/RagXOllama
 cd RagXOllama
+```
+2. Add your documents to ```Docs/ ```folder.
+3. Simply build the docker containers using
+```
 docker compose up 
 ```
 2. Wait for the data to be ingested to DB and the LLM model to be downloaded.
@@ -44,7 +47,7 @@ docker compose up
 - Search and query your data easily using Natural Language only!
 - Keep all your LLMs up to date with the latest data.
 - Use any open source LLM of your choice. [Browse LLMs](https://ollama.com/library)
-- This repo can to be used as a template to easily integrate any LLM with RAG functionality into your MERN (or any other node.js) stack apps, natively.
+- This repo can be used as a template to easily integrate LLMs with RAG functionality into your MERN (or any other node.js) stack apps.
 
 ## Example
 ![RAG_example](https://github.com/vteam27/RagXOllama/assets/94956831/11031cff-618f-47ad-b6dd-5f5306450526)
@@ -75,4 +78,3 @@ With the help of Retrieval-Augmented Generation (RAG) we can achieve:
 - [x] Build demo UI for easy interaction
 - [x] Containarize and publish image to dockerhub
 - [x] All done for now :)
-

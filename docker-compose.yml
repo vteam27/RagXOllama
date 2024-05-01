@@ -2,7 +2,8 @@ version: '3'
 
 services:
   ragxollama:
-    build: .
+    image: zedd27/ragxollama:tinyllama
+    # use build . to build from local
     ports:
       - "3000:3000"
     depends_on:
